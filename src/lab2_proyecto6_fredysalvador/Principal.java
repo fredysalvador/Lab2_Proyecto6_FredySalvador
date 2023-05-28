@@ -4,9 +4,13 @@
  */
 package lab2_proyecto6_fredysalvador;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -65,9 +69,9 @@ public class Principal extends javax.swing.JFrame {
         jd_Arbol_Artista = new javax.swing.JDialog();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        tf_nombre1 = new javax.swing.JTextField();
+        ttitulop = new javax.swing.JTextField();
         AgregarArbolArtista = new javax.swing.JButton();
-        cb_nacionalidad1 = new javax.swing.JComboBox();
+        tlanzamiento = new javax.swing.JComboBox();
         AgregarCancionArtista = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -340,8 +344,13 @@ public class Principal extends javax.swing.JFrame {
                 AgregarArbolArtistaMouseClicked(evt);
             }
         });
+        AgregarArbolArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarArbolArtistaActionPerformed(evt);
+            }
+        });
 
-        cb_nacionalidad1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Singles", "Albumes" }));
+        tlanzamiento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Singles", "Albumes" }));
 
         AgregarCancionArtista.setText("Agregar Lista");
         AgregarCancionArtista.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -456,11 +465,11 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_Arbol_ArtistaLayout.createSequentialGroup()
                                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ttitulop, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_Arbol_ArtistaLayout.createSequentialGroup()
                                 .addComponent(jLabel20)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cb_nacionalidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(tlanzamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(33, 33, 33))
                     .addGroup(jd_Arbol_ArtistaLayout.createSequentialGroup()
                         .addGroup(jd_Arbol_ArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,14 +486,14 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(jd_Arbol_ArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cb_nacionalidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tlanzamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jd_Arbol_ArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_Arbol_ArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tf_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ttitulop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jd_Arbol_ArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel25)))
@@ -846,6 +855,24 @@ abrir_ingresar();
 
     private void AgregarArbolArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarArbolArtistaMouseClicked
         // TODO add your handling code here:
+   DefaultTreeModel m = (DefaultTreeModel) jt_Artistas.getModel();
+        DefaultMutableTreeNode raiz
+                = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode nodo_persona;
+        nodo_persona
+                = new DefaultMutableTreeNode(
+                        new Lanzamiento(ttitulop.getText(),
+                             (String) tlanzamiento.getSelectedItem()
+                )
+                );
+        
+        DefaultMutableTreeNode anio;
+        DefaultMutableTreeNode edad;
+        
+   //     nodo_persona.add(anio);
+        raiz.add(nodo_persona);
+        m.reload();
+
     }//GEN-LAST:event_AgregarArbolArtistaMouseClicked
 
     private void AgregarCancionArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarCancionArtistaMouseClicked
@@ -887,6 +914,10 @@ abrir_ingresar();
      jd_Arbol_Artista.setModal(true);
      jd_Arbol_Artista.setVisible(true);
     }//GEN-LAST:event_arbolartistaMouseClicked
+
+    private void AgregarArbolArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarArbolArtistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarArbolArtistaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -934,7 +965,6 @@ abrir_ingresar();
     private javax.swing.JButton btAgregarArtista;
     private javax.swing.JButton btAgregarCliente;
     private javax.swing.JButton btIngresar;
-    private javax.swing.JComboBox cb_nacionalidad1;
     private javax.swing.JButton eliminarusuarios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -985,10 +1015,11 @@ abrir_ingresar();
     private javax.swing.JTextField tcontrasenacliente;
     private javax.swing.JTextField tedadartista;
     private javax.swing.JTextField tedadcliente;
-    private javax.swing.JTextField tf_nombre1;
+    private javax.swing.JComboBox tlanzamiento;
     private javax.swing.JTextField tnomartista;
     private javax.swing.JTextField tnomartistico;
     private javax.swing.JTextField tnomcliente;
+    private javax.swing.JTextField ttitulop;
     private javax.swing.JTextField tusuar;
     private javax.swing.JButton verusuario;
     // End of variables declaration//GEN-END:variables

@@ -355,12 +355,12 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel21" min="-2" pref="118" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tf_nombre1" min="-2" pref="151" max="-2" attributes="0"/>
+                                  <Component id="ttitulop" min="-2" pref="151" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="cb_nacionalidad1" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="tlanzamiento" min="-2" pref="111" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -386,7 +386,7 @@
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel20" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="cb_nacionalidad1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tlanzamiento" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -394,7 +394,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel21" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="tf_nombre1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ttitulop" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -429,7 +429,7 @@
             <Property name="text" type="java.lang.String" value="Titulo de Publicacion:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tf_nombre1">
+        <Component class="javax.swing.JTextField" name="ttitulop">
         </Component>
         <Component class="javax.swing.JButton" name="AgregarArbolArtista">
           <Properties>
@@ -437,9 +437,10 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AgregarArbolArtistaMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgregarArbolArtistaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cb_nacionalidad1">
+        <Component class="javax.swing.JComboBox" name="tlanzamiento">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
