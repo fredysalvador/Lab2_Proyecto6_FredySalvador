@@ -67,6 +67,15 @@ public class Principal extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jd_Arbol_Cliente = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jt_Artistas1 = new javax.swing.JTree();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        nomrep = new javax.swing.JTextField();
+        AgregarArbolArtista1 = new javax.swing.JButton();
+        nomcanf = new javax.swing.JTextField();
         jd_Arbol_Artista = new javax.swing.JDialog();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -328,15 +337,99 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(24, 24, 24))
         );
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Reproduccion");
+        jt_Artistas1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jt_Artistas1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_Artistas1MouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(jt_Artistas1);
+
+        jLabel28.setText("Reproduccion");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jLabel29.setText("Nombre Reproduccion");
+
+        jLabel30.setText("Nombre Cancion Favorita");
+
+        AgregarArbolArtista1.setText("Agregar al arbol");
+        AgregarArbolArtista1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AgregarArbolArtista1MouseClicked(evt);
+            }
+        });
+        AgregarArbolArtista1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarArbolArtista1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_Arbol_ClienteLayout = new javax.swing.GroupLayout(jd_Arbol_Cliente.getContentPane());
         jd_Arbol_Cliente.getContentPane().setLayout(jd_Arbol_ClienteLayout);
         jd_Arbol_ClienteLayout.setHorizontalGroup(
             jd_Arbol_ClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 665, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_Arbol_ClienteLayout.createSequentialGroup()
+                .addGap(0, 71, Short.MAX_VALUE)
+                .addGroup(jd_Arbol_ClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AgregarArbolArtista1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(158, 158, 158))
+            .addGroup(jd_Arbol_ClienteLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(jd_Arbol_ClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_Arbol_ClienteLayout.createSequentialGroup()
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomcanf, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_Arbol_ClienteLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel29)
+                        .addGap(60, 60, 60)
+                        .addComponent(nomrep, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jd_Arbol_ClienteLayout.setVerticalGroup(
             jd_Arbol_ClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 485, Short.MAX_VALUE)
+            .addGroup(jd_Arbol_ClienteLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jd_Arbol_ClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomrep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jd_Arbol_ClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_Arbol_ClienteLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_Arbol_ClienteLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(nomcanf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(AgregarArbolArtista1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(40, 40, 40))
         );
 
         jLabel20.setText("Tipo de Lanzamiento:");
@@ -381,7 +474,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel22.setText("Canciones");
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Tipo Lanzamiento");
+        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Tipo Lanzamiento");
         jt_Artistas.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jt_Artistas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -677,6 +770,11 @@ public class Principal extends javax.swing.JFrame {
                 verusuarioMouseClicked(evt);
             }
         });
+        verusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verusuarioActionPerformed(evt);
+            }
+        });
         jToolBar1.add(verusuario);
 
         agregarusuarioscliente.setText("Agregar Cliente");
@@ -697,6 +795,11 @@ public class Principal extends javax.swing.JFrame {
         salirusuario.setEnabled(false);
         salirusuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         salirusuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        salirusuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirusuarioMouseClicked(evt);
+            }
+        });
         jToolBar1.add(salirusuario);
 
         arbolcliente.setText("Arbol Cliente");
@@ -925,7 +1028,7 @@ abrir_ingresar();
 
     private void AgregarArbolArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarArbolArtistaMouseClicked
         // TODO add your handling code here:
-   DefaultTreeModel m = (DefaultTreeModel) jt_Artistas.getModel();
+   DefaultTreeModel m = (DefaultTreeModel) jt_Artistas1.getModel();
         DefaultMutableTreeNode raiz  = (DefaultMutableTreeNode) m.getRoot();
         DefaultMutableTreeNode nodo_tipo;
         DefaultMutableTreeNode nodo_persona;
@@ -946,6 +1049,19 @@ abrir_ingresar();
 
     private void AgregarCancionArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarCancionArtistaMouseClicked
         // TODO add your handling code here:
+        
+             //e TODO add your handling code here:
+        DefaultListModel modelo
+                = (DefaultListModel) jl_Artistas.getModel();
+
+        modelo.addElement(new Single(ttitulop.getText(), "27/05/2023", jTextField1.getText() )
+        );
+        //indsds
+        jl_Artistas.setModel(modelo);
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+
     }//GEN-LAST:event_AgregarCancionArtistaMouseClicked
 
     private void jl_ArtistasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_ArtistasMouseClicked
@@ -962,6 +1078,65 @@ abrir_ingresar();
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
+           if (jl_Artistas.getSelectedIndex() >= 0) {
+            DefaultTreeModel modeloARBOL
+                    = (DefaultTreeModel) jt_Artistas.getModel();
+            DefaultMutableTreeNode raiz
+                    = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            //obtener la persona a guardar
+            DefaultListModel modeloLISTA
+                    = (DefaultListModel) jt_Artistas.getModel();
+            
+            String lanzamiento, nombre, cancion; 
+            nombre = ((Single) modeloLISTA.get(
+                    jl_Artistas.getSelectedIndex())).
+                    getTitulo();
+            
+            lanzamiento = ((Single) modeloLISTA.get(
+                   jl_Artistas.getSelectedIndex())).
+                    getFechaLanzamiento();
+                       
+            cancion
+                    = ((Single) modeloLISTA.get(
+                            jl_Artistas.getSelectedIndex())).
+                    getCancion();
+
+            
+            
+            int centinela = -1;           
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().
+                        equals(nombre)) {
+                    DefaultMutableTreeNode p
+                            = new DefaultMutableTreeNode(
+                                    new Single(nombre,
+                                            lanzamiento, cancion)
+                            );
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                    centinela = 1;
+                } //fin if
+            } //fin for  
+            
+            if (centinela == -1) {
+                DefaultMutableTreeNode n
+                        = new DefaultMutableTreeNode(nombre);
+                DefaultMutableTreeNode p
+                        = new DefaultMutableTreeNode(
+                                new Single(nombre, lanzamiento,
+                                        cancion)
+                        );
+                n.add(p);
+                raiz.add(n);
+            }  // fin if          
+            modeloARBOL.reload();
+            
+                        
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "No hay seleccion");
+        }
+
+        
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void btIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIngresarActionPerformed
@@ -995,8 +1170,33 @@ abrir_ingresar();
     jd_listaaruser.setModal(true);
     jd_listaaruser.setVisible(true);
         
+            
+    }//GEN-LAST:event_verusuarioMouseClicked
+
+    private void TablaUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaUsersMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TablaUsersMouseClicked
+
+    private void bteliminarusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bteliminarusuarioMouseClicked
+        // TODO add your handling code here:
+          if (TablaUsers.getSelectedRow() >= 0) {
+            DefaultTableModel modelo
+                    = (DefaultTableModel) TablaUsers.getModel();
+            modelo.removeRow(TablaUsers.getSelectedRow());
+            TablaUsers.setModel(modelo);
+            //tf_edad_maxima.setText(maxima_edad());
+             int selectedRow = TablaUsers.getSelectedRow();
+            
+            selectedRow = selectedRow + 1;
+            usuarios.remove(selectedRow);
+            
+        }
         
-          try {
+    }//GEN-LAST:event_bteliminarusuarioMouseClicked
+
+    private void verusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verusuarioActionPerformed
+        // TODO add your handling code here:
+        try {
 
             //limpiar tabla
             TablaUsers.setModel(new javax.swing.table.DefaultTableModel(
@@ -1021,29 +1221,41 @@ abrir_ingresar();
             ex.printStackTrace();
         }
 
-            
-    }//GEN-LAST:event_verusuarioMouseClicked
+    }//GEN-LAST:event_verusuarioActionPerformed
 
-    private void TablaUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaUsersMouseClicked
+    private void salirusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirusuarioMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_TablaUsersMouseClicked
-
-    private void bteliminarusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bteliminarusuarioMouseClicked
-        // TODO add your handling code here:
-          if (TablaUsers.getSelectedRow() >= 0) {
-            DefaultTableModel modelo
-                    = (DefaultTableModel) TablaUsers.getModel();
-            modelo.removeRow(TablaUsers.getSelectedRow());
-            TablaUsers.setModel(modelo);
-            //tf_edad_maxima.setText(maxima_edad());
-             int selectedRow = TablaUsers.getSelectedRow();
-            
-            selectedRow = selectedRow + 1;
-            usuarios.remove(selectedRow);
-            
-        }
         
-    }//GEN-LAST:event_bteliminarusuarioMouseClicked
+    }//GEN-LAST:event_salirusuarioMouseClicked
+
+    private void jt_Artistas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_Artistas1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_Artistas1MouseClicked
+
+    private void AgregarArbolArtista1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarArbolArtista1MouseClicked
+/*        // TODO add your handling code here:
+           DefaultTreeModel m = (DefaultTreeModel) jt_Artistas.getModel();
+        DefaultMutableTreeNode raiz  = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode nodo_tipo;
+        DefaultMutableTreeNode nodo_persona;
+        nodo_tipo = new DefaultMutableTreeNode(tlanzamiento.getSelectedItem());
+        nodo_persona = new DefaultMutableTreeNode(new Lanzamiento(ttitulop.getText(), (String) tlanzamiento.getSelectedItem()
+                )
+                );
+        
+        DefaultMutableTreeNode anio;
+        DefaultMutableTreeNode edad;
+        
+   //     nodo_persona.add(anio);
+       raiz.add(nodo_tipo);
+        nodo_tipo.add(nodo_persona);
+        m.reload();
+*/
+    }//GEN-LAST:event_AgregarArbolArtista1MouseClicked
+
+    private void AgregarArbolArtista1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarArbolArtista1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarArbolArtista1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1084,6 +1296,7 @@ abrir_ingresar();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarArbolArtista;
+    private javax.swing.JButton AgregarArbolArtista1;
     private javax.swing.JButton AgregarCancionArtista;
     private javax.swing.JTable TablaUsers;
     private javax.swing.JButton agregarusuariosartistas;
@@ -1113,7 +1326,10 @@ abrir_ingresar();
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1123,9 +1339,11 @@ abrir_ingresar();
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -1139,6 +1357,9 @@ abrir_ingresar();
     private javax.swing.JDialog jd_listaaruser;
     private javax.swing.JList jl_Artistas;
     private javax.swing.JTree jt_Artistas;
+    private javax.swing.JTree jt_Artistas1;
+    private javax.swing.JTextField nomcanf;
+    private javax.swing.JTextField nomrep;
     private javax.swing.JButton salirusuario;
     private javax.swing.JTextField tcont;
     private javax.swing.JTextField tcontrasenaartista;

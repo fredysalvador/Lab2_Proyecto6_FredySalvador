@@ -9,14 +9,14 @@ package lab2_proyecto6_fredysalvador;
  * @author Fredy Salvador
  */
 public class Single extends Lanzamiento {
-    private Cancion cancion;
+    private String cancion;
 
-    public Single(String titulo, String fechaLanzamiento, Cancion cancion) {
+    public Single(String titulo, String fechaLanzamiento, String cancion) {
         super(titulo, fechaLanzamiento);
         this.cancion = cancion;
     }
 
-    public Cancion getCancion() {
+    public String getCancion() {
         return cancion;
     }
 }
