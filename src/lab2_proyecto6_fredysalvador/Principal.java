@@ -1028,7 +1028,7 @@ abrir_ingresar();
 
     private void AgregarArbolArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarArbolArtistaMouseClicked
         // TODO add your handling code here:
-   DefaultTreeModel m = (DefaultTreeModel) jt_Artistas1.getModel();
+   DefaultTreeModel m = (DefaultTreeModel) jt_Artistas.getModel();
         DefaultMutableTreeNode raiz  = (DefaultMutableTreeNode) m.getRoot();
         DefaultMutableTreeNode nodo_tipo;
         DefaultMutableTreeNode nodo_persona;
@@ -1233,24 +1233,7 @@ abrir_ingresar();
     }//GEN-LAST:event_jt_Artistas1MouseClicked
 
     private void AgregarArbolArtista1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarArbolArtista1MouseClicked
-/*        // TODO add your handling code here:
-           DefaultTreeModel m = (DefaultTreeModel) jt_Artistas.getModel();
-        DefaultMutableTreeNode raiz  = (DefaultMutableTreeNode) m.getRoot();
-        DefaultMutableTreeNode nodo_tipo;
-        DefaultMutableTreeNode nodo_persona;
-        nodo_tipo = new DefaultMutableTreeNode(tlanzamiento.getSelectedItem());
-        nodo_persona = new DefaultMutableTreeNode(new Lanzamiento(ttitulop.getText(), (String) tlanzamiento.getSelectedItem()
-                )
-                );
-        
-        DefaultMutableTreeNode anio;
-        DefaultMutableTreeNode edad;
-        
-   //     nodo_persona.add(anio);
-       raiz.add(nodo_tipo);
-        nodo_tipo.add(nodo_persona);
-        m.reload();
-*/
+        // TODO add your handling code here:
     }//GEN-LAST:event_AgregarArbolArtista1MouseClicked
 
     private void AgregarArbolArtista1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarArbolArtista1ActionPerformed
