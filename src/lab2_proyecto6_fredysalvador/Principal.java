@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -95,12 +96,16 @@ public class Principal extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         btIngresar = new javax.swing.JButton();
         tusuar = new javax.swing.JTextField();
+        jd_listaaruser = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaUsers = new javax.swing.JTable();
+        bteliminarusuario = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
         verusuario = new javax.swing.JButton();
-        agregarusuarios = new javax.swing.JButton();
-        eliminarusuarios = new javax.swing.JButton();
+        agregarusuarioscliente = new javax.swing.JButton();
+        agregarusuariosartistas = new javax.swing.JButton();
         salirusuario = new javax.swing.JButton();
         arbolcliente = new javax.swing.JButton();
         arbolartista = new javax.swing.JButton();
@@ -589,6 +594,62 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
+        TablaUsers.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nombre Usuario", "Contraseña"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        TablaUsers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaUsersMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TablaUsers);
+
+        bteliminarusuario.setText("Eliminar");
+        bteliminarusuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bteliminarusuarioMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_listaaruserLayout = new javax.swing.GroupLayout(jd_listaaruser.getContentPane());
+        jd_listaaruser.getContentPane().setLayout(jd_listaaruserLayout);
+        jd_listaaruserLayout.setHorizontalGroup(
+            jd_listaaruserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listaaruserLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+                .addGap(7, 7, 7))
+            .addGroup(jd_listaaruserLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(bteliminarusuario)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_listaaruserLayout.setVerticalGroup(
+            jd_listaaruserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listaaruserLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bteliminarusuario)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -606,30 +667,34 @@ public class Principal extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton1);
 
-        verusuario.setText("Ver Usuario");
+        verusuario.setText("Ver Usuario + Eliminar");
         verusuario.setEnabled(false);
         verusuario.setFocusable(false);
         verusuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         verusuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        verusuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                verusuarioMouseClicked(evt);
+            }
+        });
         jToolBar1.add(verusuario);
 
-        agregarusuarios.setText("Agregar Usuario");
-        agregarusuarios.setEnabled(false);
-        agregarusuarios.setFocusable(false);
-        agregarusuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        agregarusuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(agregarusuarios);
+        agregarusuarioscliente.setText("Agregar Cliente");
+        agregarusuarioscliente.setEnabled(false);
+        agregarusuarioscliente.setFocusable(false);
+        agregarusuarioscliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        agregarusuarioscliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(agregarusuarioscliente);
 
-        eliminarusuarios.setText("Eliminar Usuario");
-        eliminarusuarios.setEnabled(false);
-        eliminarusuarios.setFocusable(false);
-        eliminarusuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        eliminarusuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(eliminarusuarios);
+        agregarusuariosartistas.setText("Agregar Artista");
+        agregarusuariosartistas.setEnabled(false);
+        agregarusuariosartistas.setFocusable(false);
+        agregarusuariosartistas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        agregarusuariosartistas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(agregarusuariosartistas);
 
         salirusuario.setText("Salir del Sistema");
         salirusuario.setEnabled(false);
-        salirusuario.setFocusable(false);
         salirusuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         salirusuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(salirusuario);
@@ -814,7 +879,6 @@ abrir_ingresar();
             tcont.setText("");
             jButton1.setEnabled(false);
             verusuario.setEnabled(true);
-            eliminarusuarios.setEnabled(true);
             salirusuario.setEnabled(true);
             arbolcliente.setEnabled(true);
             arbolartista.setEnabled(true);
@@ -924,6 +988,63 @@ abrir_ingresar();
         // TODO add your handling code here:
     }//GEN-LAST:event_AgregarArbolArtistaActionPerformed
 
+    private void verusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verusuarioMouseClicked
+        // TODO add your handling code here:
+        jd_listaaruser.pack();
+    jd_listaaruser.setLocationRelativeTo(this);
+    jd_listaaruser.setModal(true);
+    jd_listaaruser.setVisible(true);
+        
+        
+          try {
+
+            //limpiar tabla
+            TablaUsers.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre Usuario", "Contraseña"
+                    }
+            ));
+            
+                  
+
+            // TODO add your handling code here:
+            for (Usuario t : usuarios) {
+                Object[] row = {t.getUsername(), t.getPassword()};
+                DefaultTableModel modelo = (DefaultTableModel) TablaUsers.getModel();
+                modelo.addRow(row);
+             TablaUsers.setModel(modelo);
+            }
+            
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+            
+    }//GEN-LAST:event_verusuarioMouseClicked
+
+    private void TablaUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaUsersMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TablaUsersMouseClicked
+
+    private void bteliminarusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bteliminarusuarioMouseClicked
+        // TODO add your handling code here:
+          if (TablaUsers.getSelectedRow() >= 0) {
+            DefaultTableModel modelo
+                    = (DefaultTableModel) TablaUsers.getModel();
+            modelo.removeRow(TablaUsers.getSelectedRow());
+            TablaUsers.setModel(modelo);
+            //tf_edad_maxima.setText(maxima_edad());
+             int selectedRow = TablaUsers.getSelectedRow();
+            
+            selectedRow = selectedRow + 1;
+            usuarios.remove(selectedRow);
+            
+        }
+        
+    }//GEN-LAST:event_bteliminarusuarioMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -964,13 +1085,15 @@ abrir_ingresar();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarArbolArtista;
     private javax.swing.JButton AgregarCancionArtista;
-    private javax.swing.JButton agregarusuarios;
+    private javax.swing.JTable TablaUsers;
+    private javax.swing.JButton agregarusuariosartistas;
+    private javax.swing.JButton agregarusuarioscliente;
     private javax.swing.JButton arbolartista;
     private javax.swing.JButton arbolcliente;
     private javax.swing.JButton btAgregarArtista;
     private javax.swing.JButton btAgregarCliente;
     private javax.swing.JButton btIngresar;
-    private javax.swing.JButton eliminarusuarios;
+    private javax.swing.JButton bteliminarusuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton5;
@@ -1000,6 +1123,7 @@ abrir_ingresar();
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField jTextField1;
@@ -1012,6 +1136,7 @@ abrir_ingresar();
     private javax.swing.JDialog jd_Arbol_Cliente;
     private javax.swing.JDialog jd_Ingresar;
     private javax.swing.JDialog jd_Login;
+    private javax.swing.JDialog jd_listaaruser;
     private javax.swing.JList jl_Artistas;
     private javax.swing.JTree jt_Artistas;
     private javax.swing.JButton salirusuario;
