@@ -630,6 +630,11 @@ public class Principal extends javax.swing.JFrame {
         arbolcliente.setFocusable(false);
         arbolcliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         arbolcliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        arbolcliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                arbolclienteMouseClicked(evt);
+            }
+        });
         jToolBar1.add(arbolcliente);
 
         arbolartista.setText("Arbol Artista");
@@ -637,6 +642,11 @@ public class Principal extends javax.swing.JFrame {
         arbolartista.setFocusable(false);
         arbolartista.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         arbolartista.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        arbolartista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                arbolartistaMouseClicked(evt);
+            }
+        });
         jToolBar1.add(arbolartista);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -861,6 +871,22 @@ abrir_ingresar();
     private void btIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIngresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btIngresarActionPerformed
+
+    private void arbolclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_arbolclienteMouseClicked
+        // TODO add your handling code here:
+     jd_Arbol_Cliente.pack();
+     jd_Arbol_Cliente.setLocationRelativeTo(this);
+     jd_Arbol_Cliente.setModal(true);
+     jd_Arbol_Cliente.setVisible(true);
+    }//GEN-LAST:event_arbolclienteMouseClicked
+
+    private void arbolartistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_arbolartistaMouseClicked
+        // TODO add your handling code here:
+        jd_Arbol_Artista.pack();
+     jd_Arbol_Artista.setLocationRelativeTo(this);
+     jd_Arbol_Artista.setModal(true);
+     jd_Arbol_Artista.setVisible(true);
+    }//GEN-LAST:event_arbolartistaMouseClicked
 
     /**
      * @param args the command line arguments

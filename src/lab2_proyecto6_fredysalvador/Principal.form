@@ -821,6 +821,9 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="arbolclienteMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="arbolartista">
               <Properties>
@@ -830,6 +833,9 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="arbolartistaMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
