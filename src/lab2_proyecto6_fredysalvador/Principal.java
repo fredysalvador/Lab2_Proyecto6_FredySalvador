@@ -516,6 +516,11 @@ public class Principal extends javax.swing.JFrame {
                 btIngresarMouseClicked(evt);
             }
         });
+        btIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btIngresarActionPerformed(evt);
+            }
+        });
         btIngresar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 btIngresarKeyPressed(evt);
@@ -787,6 +792,9 @@ abrir_ingresar();
             verusuario.setEnabled(true);
             eliminarusuarios.setEnabled(true);
             salirusuario.setEnabled(true);
+            arbolcliente.setEnabled(true);
+            arbolartista.setEnabled(true);
+            
 
             jd_Login.setVisible(false);
 
@@ -849,6 +857,10 @@ abrir_ingresar();
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10MouseClicked
+
+    private void btIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIngresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btIngresarActionPerformed
 
     /**
      * @param args the command line arguments
