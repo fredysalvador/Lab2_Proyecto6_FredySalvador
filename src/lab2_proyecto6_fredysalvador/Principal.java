@@ -376,7 +376,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel22.setText("Canciones");
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Personas");
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Tipo Lanzamiento");
         jt_Artistas.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jt_Artistas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -745,11 +745,14 @@ abrir_ingresar();
             tedadartista.setText("");
             tnomartistico.setText("");
             
+                                jd_AgregarArtista.setVisible(false);
+            
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
                  "Ocurrio un error y no se guardaron los datos");
         }
+
     }//GEN-LAST:event_btAgregarArtistaMouseClicked
 
     private void btAgregarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarClienteMouseClicked
@@ -770,6 +773,8 @@ abrir_ingresar();
             tnomcliente.setText("");
             tcontrasenacliente.setText("");
             tedadcliente.setText("");
+            
+             jd_AgregarCliente.setVisible(false);
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -816,6 +821,7 @@ abrir_ingresar();
             
 
             jd_Login.setVisible(false);
+            jd_Ingresar.setVisible(false);
 
         }else{
             JOptionPane.showMessageDialog(jd_Ingresar, "Usuario Equivocado");
@@ -856,13 +862,11 @@ abrir_ingresar();
     private void AgregarArbolArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarArbolArtistaMouseClicked
         // TODO add your handling code here:
    DefaultTreeModel m = (DefaultTreeModel) jt_Artistas.getModel();
-        DefaultMutableTreeNode raiz
-                = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode raiz  = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode nodo_tipo;
         DefaultMutableTreeNode nodo_persona;
-        nodo_persona
-                = new DefaultMutableTreeNode(
-                        new Lanzamiento(ttitulop.getText(),
-                             (String) tlanzamiento.getSelectedItem()
+        nodo_tipo = new DefaultMutableTreeNode(tlanzamiento.getSelectedItem());
+        nodo_persona = new DefaultMutableTreeNode(new Lanzamiento(ttitulop.getText(), (String) tlanzamiento.getSelectedItem()
                 )
                 );
         
@@ -870,7 +874,8 @@ abrir_ingresar();
         DefaultMutableTreeNode edad;
         
    //     nodo_persona.add(anio);
-        raiz.add(nodo_persona);
+       raiz.add(nodo_tipo);
+        nodo_tipo.add(nodo_persona);
         m.reload();
 
     }//GEN-LAST:event_AgregarArbolArtistaMouseClicked

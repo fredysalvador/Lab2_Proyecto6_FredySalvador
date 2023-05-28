@@ -34,4 +34,10 @@ public class Lanzamiento {
     public void incrementarLikes() {
         conteoLikes++;
     }
+    
+     @Override
+    public String toString() {
+        return titulo;
+    }
+    
 }
